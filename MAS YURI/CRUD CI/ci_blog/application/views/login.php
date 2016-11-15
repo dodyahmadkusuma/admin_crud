@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Login</title>
+        <link rel="stylesheet" href="<?=base_url('dashboard/assets/') ?>css/bootstrap.min.css" />
 	<style type="text/css">
 		li.menu {display: inline;}
 * {
@@ -105,10 +106,14 @@ img{display: none;}
   <div class="form">
   <form action="<?= base_url('Login/act_login') ?>" method="POST">
     
-    <input type="text" placeholder="Username" name="user" required="required">
-    <input type="password" placeholder="Password" name="pass" required="required">
+    <input type="text" placeholder="Username" name="user" >
+    <input type="password" placeholder="Password" name="pass" >
     <button> Sign in </button>
   </div>
+<center>
+  <a class=" btn btn-default" href="<?=base_url('home') ?>">Kembali</a>
+  <a class=" btn btn-danger" href="<?=base_url('forgot')  ?>">Forgot Password</a>
+</center>
   </form>
 </div>
 </div>

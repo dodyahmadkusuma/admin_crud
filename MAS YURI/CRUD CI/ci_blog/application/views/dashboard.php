@@ -80,36 +80,101 @@
               </div><!-- /.ace-settings-box -->
             </div><!-- /.ace-settings-container -->
 
+              <div class="col-md-5">
+                <canvas id="myChart" width="400" height="400"></canvas>
+              </div>
+              <div class="col-md-7">
+                             <h2>Recent Post</h2>
+                
+              <table id="TableSaya" >
+                <thead>
+                  <tr>
+                    <th>
+                      Judul Artikel
+                    </th>
+                    <th>
+                      Tanggal Post
+                    </th>
+                  </tr>
+                  </thead>
 
+              <?php foreach ($data_atl as $key => $value) { ?>
+                  <tr>
+                    <td>
+                      <?= $value->judul_content ?>
+                    </td>
+                    <td>
+                      <?= $value->tgl_content ?>
+                    </td>
+                  </tr>
+              <?php } ?>
+              </table>
+               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#TambahModal" > Tambah Artikel </button>
 
-
-  <!-- Tombol untuk menampilkan modal-->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Buka Modal</button>
-
-  <!-- Modal -->
-  <div id="myModal" class="modal fade" role="dialog">
+  <!-- Modal Tambah -->
+  <div id="TambahModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <!-- konten modal-->
       <div class="modal-content">
         <!-- heading modal -->
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Bagian heading modal</h4>
+          <form method="POST" action="<?= base_url('admin/act_tambah/')?>">
+          <h4 class="modal-title"><input type="text" name="judul_content" placeholder="JUDUL" class="form-group form-control"></h4>
         </div>
         <!-- body modal -->
+        <i><input type="hidden" name="tgl_content"></i>
         <div class="modal-body">
-          <p>bagian body modal.</p>
+          <p><textarea type="text" name="isi_content" placeholder="ISI ARTIKEL" class="form-group form-control"></textarea></p>
         </div>
         <!-- footer modal -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+          <button type="submit" class="btn btn-success" id="tambahconten">Simpan</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
+              <script src="<?=base_url('dashboard/assets/')?>js/jquery-3.1.1.min.js"></script>
+              <script src="<?=base_url('dashboard/assets/')?>js/jquery.dataTables.min.js"></script>
+              <script type="text/javascript">
+                
+            $(document).ready(function(){
+                  $('#TableSaya').DataTable();
+                  });
+              </script>
+                  </div>
+                <script>
+                
+
+                  var ctx = document.getElementById("myChart");
+
+                  var myChart = new Chart(ctx, {
+                      type: 'pie',
+                      data: {
+                      labels: ["Artikel", "Views"],
+                      datasets: [{
+                      label: '# of Votes',
+                      data: [<?= count($content)?>,<?=date('s') ?>],
+                      backgroundColor: [
+                      'rgba(255, 99, 132, 0.5)',
+                      'rgba(54, 162, 235, 0.5)',
+                      'rgba(255, 206, 86, 0.5)',
+                      'rgba(75, 192, 192, 0.5)',
+                      'rgba(153, 102, 255, 0.5)',
+                      'rgba(255, 159, 64, 0.5)'
+                      ],
+                      
+                      borderWidth: 1
+                      }]
+                      },
+                     
+                    
+                  });
 
 
-               
+
+                </script>
                 <!-- PAGE CONTENT ENDS -->
               </div><!-- /.col -->
             </div><!-- /.row -->

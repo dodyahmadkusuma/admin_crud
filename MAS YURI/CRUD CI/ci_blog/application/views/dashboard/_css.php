@@ -23,6 +23,7 @@
     <![endif]-->
     <link rel="stylesheet" href="<?=base_url('dashboard/assets/') ?>css/ace-skins.min.css" />
     <link rel="stylesheet" href="<?=base_url('dashboard/assets/') ?>css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="<?=base_url('dashboard/assets/')?>css/jquery.dataTables.min.css" />
 
     
 
@@ -30,10 +31,19 @@
 
     <!-- ace settings handler -->
     <script src="<?=base_url('dashboard/assets/') ?>js/ace-extra.min.js"></script>
-    <script src="<?=base_url('dashboard/assets/')?>js/jquery-2.1.4.min.js"></script>
+    <script src="<?=base_url('dashboard/assets/')?>js/Chart.min.js"></script>
+    <!-- DATA TABLES -->
+   
+  
+
 
     <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
     <style type="text/css">
+    .hilang{
+        display: none;
+    }
+
+
         body{
     background: #ecf0f1;
     font-family: sans-serif;

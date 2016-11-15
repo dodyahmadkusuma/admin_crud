@@ -16,7 +16,10 @@ class Admin extends Auth_Controller {
          
         $data['user']       = $this->M_login->get();
         $data['data_atl']   = $this->blog->get();
+        $content                = $this->blog->get();
+        $data['content']        = $content;
         $this->template->dashboard('dashboard' ,$data);
+        $this->load->view('dataTable',$data);
     }
     public function Profile()
     {
@@ -156,7 +159,7 @@ class Admin extends Auth_Controller {
     public function act_tambah()
     {
         $data= $this->blog->plus();
-        redirect('admin/post/');
+        redirect($_SERVER[HTTP_REFERER]);
     }
     public function delete($id='')
     {
