@@ -84,7 +84,7 @@
                 <canvas id="myChart" width="400" height="400"></canvas>
               </div>
               <div class="col-md-7">
-                             <h2>Recent Post</h2>
+                             <h2>Data Post</h2>
                 
               <table id="TableSaya" >
                 <thead>
