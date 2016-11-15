@@ -27,8 +27,12 @@
 <?php echo $_footer; ?>
 <!-- ./wrapper -->
 
+
 <!-- INCLUDE JS -->
 <?php echo $_js; ?>
 
 </body>
 </html>
+
+  
+

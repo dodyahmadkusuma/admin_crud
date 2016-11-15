@@ -33,10 +33,10 @@ class Admin extends Auth_Controller {
                 $param = $this->input->post();
                 $proses_simpan = $this->blog->editprofile($param);
             
-                $config['upload_path']          =   FCPATH . './dashboard/dist/img/';
+                $config['upload_path']          =   FCPATH . './dashboard/assets/images/avatars/';
                 $config['allowed_types']        =   'jpeg|jpg|png';
                 $config['overwrite']            =   TRUE;
-                $config['file_name']            =   'avatar.png';
+                $config['file_name']            =   'user.jpg';
                 $config['max_size']             =   1000;
                 // $config['max_width']            = 215;
                 // $config['max_height']           = 215;
