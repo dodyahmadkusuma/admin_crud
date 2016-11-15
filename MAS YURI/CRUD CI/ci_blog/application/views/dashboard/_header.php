@@ -12,9 +12,9 @@
         </button>
 
         <div class="navbar-header pull-left">
-          <a href="<?= base_url('home')?>" class="navbar-brand" target="_blank">
+          <a href="<?= base_url('admin')?>" class="navbar-brand">
             <small>
-              <i class="fa fa-truck"></i>
+              <i class="fa fa-leaf"></i>
               AdminWebBlog 
             </small>
           </a>
@@ -279,7 +279,7 @@
 
             <li class="light-blue dropdown-modal">
               <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                <img style="height: 30px; width: 30px;" class="nav-user-photo" src="<?=base_url('dashboard/assets/') ?>images/avatars/user.jpg" alt="Jason's Photo" />
+                <img style="height: 30px; width: 30px;" class="nav-user-photo" src="<?=base_url('dashboard/assets/') ?>images/avatars/<?=$user->id_gambar?>" alt="Jason's Photo" />
                 <span class="user-info">
                   <small>Welcome,</small>
                   <?=$user->name_user?>

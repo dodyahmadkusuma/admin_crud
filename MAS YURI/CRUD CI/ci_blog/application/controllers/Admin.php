@@ -62,6 +62,7 @@ class Admin extends Auth_Controller {
                 $this->upload->initialize($config);
 
     }
+    
     public function Post($halaman="")
     {
         $data['user']       = $this->user;
@@ -127,9 +128,9 @@ class Admin extends Auth_Controller {
         $data['user']       = $this->user;
         $content                = $this->blog->detailAtl($id);
         $data['content']        = $content;
-        $this->template->dashboard('detail_post', $data);
+        $this->template->dashboard('edit_post', $data);
     }
-    public function simpancontent()
+    public function simpancontent($param)
     {
           
         $param = $this->input->get();

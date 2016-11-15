@@ -1,19 +1,22 @@
+
+
+
 <div class="main-content">
         <div class="main-content-inner">
           <div class="breadcrumbs ace-save-state" id="breadcrumbs">
             <ul class="breadcrumb">
               <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="<?=base_url('admin')  ?>">Home</a>
-              </li>
+                <a href="<?=base_url('admin') ?>">Home</a>
+              </li> 
               <li>
                 <i class="active"></i>
-                <a href="<?=base_url('admin/profile/')  ?>">Profile</a>
+                <a href="<?=base_url('admin/post/') ?>">Artikel</a>
               </li>
-              <li class="active">Edit Profile</li>
+              <li class="active"> Edit Artikel</li>
             </ul><!-- /.breadcrumb -->
 
-           
+            
 
           <div class="page-content">
             <div class="ace-settings-container" id="ace-settings-container">
@@ -83,39 +86,27 @@
                 </div><!-- /.pull-left -->
               </div><!-- /.ace-settings-box -->
             </div><!-- /.ace-settings-container -->
-       
         
-<style type="text/css">
-img{
-  width: 215px;
-  height: 215px;
-}
-</style>
-<div>
-  
-<?= form_open_multipart('admin/uploadprofile/'); ?>
-  <input type="hidden" name="id" value="<?=$user->id; ?>">
-<div class="user-panel">
-          <center><img src="<?= base_url('dashboard/assets/')?>images/avatars/<?=$user->id_gambar?>" class="img-circle" alt="User Image"></center>
-     <label>Photo Profile</label><small>(maksimal ukuran 1000kb)</small>
- <input class="form-control" type="file" name="avatar" >
-  
-
-
- <label>Nama</label><input class="form-control" type="text" name="name_user" value="<?=$user->name_user  ?>">
- <label>Telepon</label><input class="form-control" type="text" name="telepon" value="<?=$user->telepon  ?>">
- <label>Alamat</label><input class="form-control" type="text" name="alamat" value="<?=$user->alamat  ?>">
-    <center>
-          <input class="btn btn-info" type="submit" value="Save">
-          <a class="btn btn-info" href="<?=base_url('admin/profile/') ?>">Cancel</a>
-    </center>
-</div>
-      </div>
-<?= form_close();  ?>
-
-
 
       
+<style type="text/css"> small{
+  opacity: 100%;
+}
+  </style>
+   <form action="<?=base_url('admin/simpancontent/')?>" method="GET" class="form-group">
+    <label>Judul</label>
+    <input class="form-control" type="text" name="judul_content" value="<?= $content->judul_content;
+     ?>">
+     <input type="hidden" name="tgl_content" value="<?php echo $content->tgl_content;?>">
+    <label>Isi Content</label>
+    <textarea class="form-control" type="text" name="isi_content" value="" rows="15"> <?=$content->isi_content?> </textarea>
+
+    <input class="form-control" type="hidden" name="id" value="<?=$content->id?>">
+
+    <a class="btn btn-danger" href="<?= base_url('admin/post/') ?>">Kembali</a>
+    <input class="btn btn-success" type="submit"  value="Simpan">
+  </form>
+
        
              
                 <!-- PAGE CONTENT ENDS -->

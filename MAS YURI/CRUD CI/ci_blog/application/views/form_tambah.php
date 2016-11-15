@@ -7,6 +7,7 @@
                 <a href="<?=base_url('admin') ?>">Home</a>
               </li>
               <li class="active">Artikel</li>
+              <li class="active">Artikel</li>
             </ul><!-- /.breadcrumb -->
 
             
@@ -99,6 +100,7 @@
 
   </div>
   
+  <button href="<?=base_url('admin/post/') ?>" class="btn btn-danger">Kembali</button>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

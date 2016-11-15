@@ -90,7 +90,7 @@ img{
 <center>
 	
 <div class="user-panel">
-          <img src="<?= base_url('dashboard/assets/')?>images/avatars/user.jpg" class="img-circle" alt="User Image">
+          <img src="<?= base_url('dashboard/assets/')?>images/avatars/<?=$user->id_gambar?>" class="img-circle" alt="User Image">
        
 <table  style="text-align: left;">
 	
@@ -122,5 +122,7 @@ img{
           </div><!-- /.page-content -->
         </div>
       </div><!-- /.main-content -->
+
+
 
 

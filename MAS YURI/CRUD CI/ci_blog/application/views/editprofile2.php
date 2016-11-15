@@ -93,7 +93,7 @@ img{
 </style>
 <div>
   
-<?= form_open_multipart('admin/uploadprofile/'); ?>
+<?= form_open_multipart('admin/uploadprofile2/'); ?>
   <input type="hidden" name="id" value="<?=$user->id; ?>">
 <div class="user-panel">
           <center><img src="<?= base_url('dashboard/assets/')?>images/avatars/<?=$user->id_gambar?>" class="img-circle" alt="User Image"></center>

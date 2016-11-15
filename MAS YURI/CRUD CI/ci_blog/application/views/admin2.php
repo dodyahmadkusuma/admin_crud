@@ -112,28 +112,106 @@ p{
        
       <?php foreach ($data_atl as $atl) { ?>
         <tr>
-          <td><a href="<?=base_url('admin/detailcontent/').$atl->id ?>">
-            <?= $atl->judul_content ?></a>
+          <td>
+            <?= $atl->judul_content ?>
           </td>
           <td>
             <?= $atl->tgl_content ?>
           </td>
           
           <td>
-           <a type="submit" class="btn btn-warning" href="<?=base_url('admin/editcontent/').$atl->id ?>" > Edit </a>
+           <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal<?=$atl->id ?>" > Edit </button>
           </td>
           <td>
             <a type="submit" class="btn btn-danger" href="<?= base_url('/admin/delete/').$atl->id ?>">Hapus</a>
           </td>
+          <td>
+  <!-- Tombol untuk menampilkan modal-->
+  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal<?=$atl->id ?>">View </button>
+
+<!-- Modal Edit -->
+  <div id="editModal<?=$atl->id ?>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- konten modal-->
+      <div class="modal-content">
+        <!-- heading modal -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <form action="<?=base_url('admin/simpancontent/')?>" method="GET" class="form-group">
+          <h4 class="modal-title"> <input class="form-group form-control" type="text" name="judul_content" value="<?= $atl->judul_content ?>"></h4>
+        </div>
+        <!-- body modal -->
+        <i></i><input type="hidden" name="tgl_content" value="<?= date('y/m/d') ?>">
+        <div class="modal-body">
+          <p><textarea type="text" name="isi_content" class="form-group form-control" ><?= $atl->isi_content ?></textarea></p>
+        </div>
+        <!-- footer modal -->
+        <div class="modal-footer">
+        <input type="hidden" name="id" value="<?=$atl->id ?>">
+          <button type="submit" class="btn btn-info"  id="editcontent">Edit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal View -->
+  <div id="myModal<?=$atl->id ?>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- konten modal-->
+      <div class="modal-content">
+        <!-- heading modal -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><?= $atl->judul_content ?></h4>
+        </div>
+        <!-- body modal -->
+        <i>Tangggal Posting : <?= $atl->tgl_content ?></i>
+        <div class="modal-body">
+          <p><?= $atl->isi_content ?></p>
+        </div>
+        <!-- footer modal -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </td>
         </tr>
         </tr>
     <?php } ?>
     </table>
     <?php echo $paging ?>
 
-<a class="btn btn-success" href="<?=base_url('admin/tambah/') ?>">Tambah Artikel</a>
 
-      
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#TambahModal" > Tambah Artikel </button>
+
+  <!-- Modal Tambah -->
+  <div id="TambahModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- konten modal-->
+      <div class="modal-content">
+        <!-- heading modal -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <form method="POST" action="<?= base_url('admin/act_tambah/')?>">
+          <h4 class="modal-title"><input type="text" name="judul_content" placeholder="JUDUL" class="form-group form-control"></h4>
+        </div>
+        <!-- body modal -->
+        <i><input type="hidden" name="tgl_content"></i>
+        <div class="modal-body">
+          <p><textarea type="text" name="isi_content" placeholder="ISI ARTIKEL" class="form-group form-control"></textarea></p>
+        </div>
+        <!-- footer modal -->
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" id="tambahconten">Simpan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
        
              
                 <!-- PAGE CONTENT ENDS -->
