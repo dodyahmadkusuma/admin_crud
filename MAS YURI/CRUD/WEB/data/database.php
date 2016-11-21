@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-<?php 
-	$conn=mysql_connect("localhost", "root", "");
-	mysql_select_db("cendana");
+<?php
 
-error_reporting('none');
-=======
-<?php 
-	$conn=mysql_connect("localhost", "root", "");
-	mysql_select_db("cendana");
+$conn=mysql_connect("139.59.226.31","cendana","cendananr2425");
+mysql_select_db("cendana_dody")
 
-error_reporting('none');
->>>>>>> fac416ddeaafeb63a6c9be7da51eb0e509d06404
- ?>
+?>
