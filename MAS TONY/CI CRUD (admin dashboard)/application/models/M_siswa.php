@@ -6,8 +6,8 @@ class M_siswa extends CI_Model {
 	public function getSiswa()
 	{
 		$this->db->select('siswa.*,kelas.nama_kelas');
-		$this->db->from('Siswa');
-		$this->db->join('Kelas', 'kelas.id_kelas = siswa.id_kelas', 'left');
+		$this->db->from('siswa');
+		$this->db->join('kelas', 'kelas.id_kelas = siswa.id_kelas', 'left');
 
 		$data = $this->db->get();
 		return $data->result();
