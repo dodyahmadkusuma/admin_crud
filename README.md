@@ -19,6 +19,5 @@ Mr.Yuri
 #Database Online 
 
 'hostname' => '139.59.226.31',
-	'username' => 'cendana',
-	'password' => 'cendananr2425',
+
 	'database' => 'cendana_dody',
