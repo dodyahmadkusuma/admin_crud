@@ -16,3 +16,9 @@ Mr.Yuri
 	Create, read, update and delete	-> Codeigniter & Native
 
 
+#Database Online 
+
+'hostname' => '139.59.226.31',
+	'username' => 'cendana',
+	'password' => 'cendananr2425',
+	'database' => 'cendana_dody',
